@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+/* css reset */
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+:root {
+  --primary-clr-500: hsl(0, 93%, 68%);
+  --primary-clr-300: hsl(0, 36%, 70%);
+
+  --neutral-clr-600: hsl(0, 6%, 24%);
+
+  --nums-of-columns: 4;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-bold: 600;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  color: var(--primary-clr-300);
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: var(--fw-regular);
+  max-width: 37.5rem;
+  margin: 0 auto;
+  background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+}
+
+/* reusable */
+
+.container {
+  max-width: 100%;
+  margin-inline: auto;
+  padding-inline: 3rem;
+}
+
+/* header */
+
+header,
+main,
+footer {
+  max-width: 37.5rem;
+  margin-inline: auto;
+}
+
+.header {
+  padding-block: 2rem;
+}
+
+.logo__img {
+  width: 120px;
+}
+
+/* main */
+main {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: 2rem;
+}
+
+/* left pt */
+.brand__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand__title {
+  font-size: 4rem;
+  line-height: 4rem;
+  font-weight: var(--fw-light);
+  padding-block: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.3rem;
+}
+
+.brand__title > span {
+  color: #000;
+  font-weight: var(--fw-bold);
+}
+
+.brand__paragraph {
+  text-align: center;
+  line-height: 2.5rem;
+  font-weight: var(--fw-regular);
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+form {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 50px;
+  margin-inline: auto;
+}
+form > input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border-style: none;
+  border-radius: 4rem;
+  border: 1px solid var(--primary-clr-300);
+  /* margin-inline: auto; */
+  padding-left: 3rem;
+  background-color: transparent;
+}
+
+form > input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.part--right > picture {
+  width: 100%;
+}
+
+.arrow-icon {
+  display: inline-block;
+  max-width: 100%;
+  margin-inline: auto;
+  align-items: center;
+  justify-self: center;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 7rem;
+  outline: none;
+  border-style: none;
+  border-radius: 4rem;
+  cursor: pointer;
+  background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  box-shadow: 0px 0px 15px 1px hsl(0, 36%, 70%, 0.45);
+}
+.btn:hover {
+  background-image: linear-gradient(135deg, hsl(0, 80%, 96%), hsl(0, 74%, 84%));
+  transition: background-image 5s;
+}
+
+.error-icon {
+  display: none;
+  position: absolute;
+  top: 24%;
+  right: 8rem;
+}
+
+.error-text {
+  position: absolute;
+  top: 5.5rem;
+  left: 3rem;
+  align-self: flex-start;
+  display: none;
+}
+
+.form.error .error-icon {
+  display: block;
+}
+
+.form.error .error-text {
+  display: inline-block;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 1.6rem;
+    max-width: 70rem;
+    margin: 0 auto;
+    background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  }
+  .row {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+  }
+  main {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
+  }
+  .brand__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1 / span 4;
+  }
+  .container {
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+  .part--right {
+    grid-column: 6 / span 10;
+  }
+  .brand__title {
+    font-size: 4rem;
+    line-height: 5rem;
+    text-align: left;
+    letter-spacing: 1.5rem;
+  }
+  .brand__paragraph {
+    text-align: left;
+    line-height: 2rem;
+    font-weight: var(--fw-light);
+    margin-bottom: 3rem;
+  }
+
+  form {
+    height: 4rem;
+  }
+}
+
+/* footer */
+
+footer {
+  margin-top: 4rem;
+}
+
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
